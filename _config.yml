@@ -50,7 +50,7 @@ customPlugins:
   - use: true
     file: 'plugin-mta-stats.html'
     sid: 500700570
-    cid: 
+    cid: 500581972
   - use: true
     file: 'plugin-baidu-push.html'
   - use: true
