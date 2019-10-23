@@ -3,3 +3,4 @@
 /build/draft
 /build/dist.tar
 /build/upload.exe
+.jekyll-cache
