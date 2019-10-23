@@ -47,13 +47,13 @@ menu:
 # plugin-mathjax
 # 数学公式支持，比较影响加载速度，请设置为 false
 customPlugins:
-  - use: true
+  - use: false
     file: 'plugin-mta-stats.html'
     sid: 500700570
     cid: 500581972
-  - use: true
+  - use: false
     file: 'plugin-baidu-push.html'
-  - use: true
+  - use: false
     file: 'plugin-click-effect.html'
   - use: false
     file: 'plugin-mathjax.html'
