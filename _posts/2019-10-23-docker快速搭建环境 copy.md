@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: docker快速搭建环境
-categories: [linux]
+categories: [Linux]
 ---
 
 ## docker安装
