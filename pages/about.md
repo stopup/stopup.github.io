@@ -14,7 +14,7 @@ title: 关于我
 
 - 熟悉 Java，NodeJs,Go 等后端语言
 
-- 后端框架 Spring，Spring Cloud，Mybatis 略有了解
+- 后端框架 Spring，Spring Cloud，Mybatis，等
 
 - 数据库方面能熟练使用 MySQL,Oracle，MongoDB
 
