@@ -54,7 +54,7 @@ docker run -it --network prod --network-alias redis -v /home/docker/redis/conf/r
 mysql
 ```
 先运行这个镜像copy出配置
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=Mhmt123! -d mysql
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456! -d mysql
 等初始化完成以后再复制
 移动出mysql data
 docker cp mysql:/var/lib/mysql/ /home/docker/mysql/data
@@ -63,13 +63,13 @@ docker cp mysql:/etc/mysql/my.cnf /home/docker/mysql/conf/my.cnf
 停止容器 删除容器
 docker rm -f mysql
 
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=Mhmt123! --privileged=true --network prod --network-alias mysql --restart=always -v /home/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf \
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456! --privileged=true --network prod --network-alias mysql --restart=always -v /home/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf \
 -v /home/docker/mysql/data:/var/lib/mysql \
 -d mysql
 ```
 
 
-redis
+nginx
 ```
 先运行这个镜像copy出配置
 docker run --name nginx -d nginx
@@ -82,4 +82,22 @@ docker rm -f nginx
 
 docker run --name nginx -d -p 80:80 -p 443:443 --network prod --network-alias nginx --restart=always -v /home/docker/nginx/html:/usr/share/nginx/html:ro -v /home/docker/nginx/conf:/etc/nginx -v /home/docker/nginx/logs:/var/log/nginx nginx
 
+```
+
+rabbitmq
+```
+网段：
+docker run -d  --name rabbitmq --network prod --network-alias rabbitmq  --restart=always -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=123456 rabbitmq:3-management
+
+映射:
+docker run -d  --name rabbitmq  -p 5672:5672 -p 15672:15672 --restart=always -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=123456 rabbitmq:3-management
+```
+
+
+
+java服务:
+```
+docker push registry.cn-chengdu.aliyuncs.com/flchy/xxx:1.0
+docker pull registry.cn-chengdu.aliyuncs.com/flchy/xxx:1.0
+docker run -d --name xxx --network prod --network-alias xxx --restart=always -v  /home/docker/xxx/logs:/logs/ registry.cn-chengdu.aliyuncs.com/flchy/xxx:1.0
 ```
