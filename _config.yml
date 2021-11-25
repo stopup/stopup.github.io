@@ -22,6 +22,7 @@ baseUrl: ''
 # 吐个槽地址，会在chat页面中重定向到该地址
 tucaoUrl: https://support.qq.com/products/367246
 
+
 # 菜单
 menu:
   - title: 首页
